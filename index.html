@@ -37,7 +37,11 @@
   .wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
 
   /* Header */
-  header { border-bottom: 1px solid var(--rule); }
+  html { scroll-behavior: smooth; }
+  /* The header stays at the top while the page scrolls, so the menu is always there. */
+  header { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--rule); }
+  /* Jumping to #apps etc. stops below the sticky header instead of under it. */
+  section { scroll-margin-top: 4.5rem; }
   header .wrap { display: flex; align-items: center; justify-content: space-between; height: 4.5rem; }
   .brand { display: flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -.01em; }
   .brand svg { width: 2rem; height: 2rem; }
