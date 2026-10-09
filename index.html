@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unleash Consult · Apps for Jira</title>
+<meta name="description" content="Unleash Consult builds apps for Jira Cloud, sold through the Atlassian Marketplace.">
+<style>
+  :root {
+    --ink: #172b4d;
+    --muted: #5e6c84;
+    --rule: #dfe1e6;
+    --bg: #ffffff;
+    --panel: #f7f8f9;
+    --green: #2ebd66;
+    --accent: #0052cc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e6edf7;
+      --muted: #9fb0c9;
+      --rule: #2c3b52;
+      --bg: #0f1621;
+      --panel: #162131;
+      --accent: #79a9ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Header */
+  header { border-bottom: 1px solid var(--rule); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 4.5rem; }
+  .brand { display: flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -.01em; }
+  .brand svg { width: 2rem; height: 2rem; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 1.5rem; font-size: .95rem; }
+  nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 5rem 0 4rem; }
+  .hero h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.12; letter-spacing: -.03em; margin: 0 0 1.25rem; max-width: 18ch; }
+  .hero p { color: var(--muted); font-size: 1.15rem; max-width: 38rem; margin: 0 0 2rem; }
+
+  /* Sections */
+  section { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; font-weight: 700; color: var(--green); margin: 0 0 .75rem; }
+  section h2 { font-size: 1.6rem; letter-spacing: -.02em; line-height: 1.25; margin: 0 0 1rem; }
+  section p { max-width: 40rem; }
+
+  /* App card */
+  .app {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1.5rem;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin-top: 1.5rem;
+  }
+  .app img { width: 4.5rem; height: 4.5rem; border-radius: 14px; }
+  .app h3 { margin: 0 0 .35rem; font-size: 1.3rem; letter-spacing: -.01em; }
+  .app p { margin: 0 0 1.25rem; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.25rem; padding: 0; list-style: none; }
+  .tags li { font-size: .8rem; padding: .2rem .6rem; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); }
+
+  /* Buttons */
+  .actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .btn {
+    display: inline-block;
+    padding: .6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 600;
+  }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .btn.primary:hover { opacity: .9; }
+
+  /* Contact */
+  .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+  .contact div { border-top: 2px solid var(--green); padding-top: .75rem; }
+  .contact strong { display: block; font-size: .85rem; color: var(--muted); font-weight: 600; margin-bottom: .25rem; }
+
+  footer { border-top: 1px solid var(--rule); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .875rem; }
+
+  @media (max-width: 36rem) {
+    nav { display: none; }
+    .hero { padding: 3rem 0 2.5rem; }
+    .app { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M58 30.5A26 26 0 1 0 58 69.5" fill="none" stroke="#2ebd66" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="40" cy="50" r="12" fill="#2ebd66"/>
+        <circle cx="67" cy="50" r="8.5" fill="#2ebd66"/>
+      </svg>
+      Unleash Consult
+    </a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>Apps for Jira, built by a project manager</h1>
+      <p>Unleash Consult builds apps for Jira Cloud that show teams what is really going on in their projects. Our apps run on Atlassian and are sold through the Atlassian Marketplace.</p>
+      <div class="actions">
+        <a class="btn primary" href="#apps">See our apps</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="apps">
+    <div class="wrap">
+      <p class="eyebrow">Apps</p>
+      <h2>Logjam for Jira</h2>
+
+      <div class="app">
+        <img src="logjam-logo.png" alt="Logjam for Jira logo">
+        <div>
+          <h3>See what's blocking your Jira project, and who to ask about it</h3>
+          <p>Logjam adds one page to a Jira project. It shows what is overdue or has gone quiet, which tasks are holding up other work, and how much of the work in progress is up to date. Free for teams of up to 10 users.</p>
+          <ul class="tags">
+            <li>Atlassian Marketplace</li>
+            <li>Jira Cloud</li>
+            <li>Runs on Atlassian</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="https://marketplace.atlassian.com/apps/3194099702/logjam-for-jira" target="_blank" rel="noopener">Get it on the Marketplace</a>
+            <a class="btn" href="/logjam/how-it-works/">How it works</a>
+            <a class="btn" href="/logjam/support/">Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2>Built from real projects</h2>
+      <p>Unleash Consult ApS is based in Fredericia, Denmark. It was founded by Frans Lykke Østergård, a senior IT project manager. Our apps start from problems he has met in real projects, such as walking into a status meeting without knowing what is actually stuck.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.linkedin.com/in/franslykke/" target="_blank" rel="noopener">Frans on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch</h2>
+      <div class="contact">
+        <div>
+          <strong>Support and questions</strong>
+          <a href="mailto:support@unleashconsult.dk">support@unleashconsult.dk</a>
+        </div>
+        <div>
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/franslykke/" target="_blank" rel="noopener">Frans Lykke Østergård</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Unleash Consult ApS · Fredericia, Denmark</div>
+</footer>
+
+</body>
+</html>
